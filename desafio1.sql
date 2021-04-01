@@ -35,7 +35,7 @@ INSERT INTO post(nombre, fecha_creacion, contenido, descripción,titulo) VALUES(
 -- 9. Crear una nueva tabla, llamada comentarios, con los atributos id, fecha y hora de creación,contenido, que se relacione con la tabla posts.
 ALTER TABLE post ADD PRIMARY KEY (id);
 
-CREATE TABLE comentarios(id SMALLINT, fecha_hora_creacion TIMESTAMP, contenido VARCHAR, FOREIGN KEY (id) REFERENCES
+CREATE TABLE comentarios(id_comentarios SERIAL, id SMALLINT, fecha_hora_creacion TIMESTAMP, contenido VARCHAR, FOREIGN KEY (id) REFERENCES
 post(id));
 
 --10. Crear 2 comentarios para el post de "Pamela" y 4 para "Carlos"
@@ -67,3 +67,5 @@ INSERT INTO comentarios(id, fecha_hora_creacion, contenido) VALUES( 7, '2021-03-
 INSERT INTO comentarios(id, fecha_hora_creacion, contenido) VALUES( 7, '2021-03-30 20:35:30', 'i become so numb');
 
 --RECORDATORIO : Se llama clave primaria a un campo o a una combinación de campos que identifica de forma única a cada fila de una tabla. Una clave primaria comprende de esta manera una columna o conjunto de columnas. No puede haber dos filas en una tabla que tengan la misma clave primaria.
+
+--ALTER TABLE nombre_tabla RENAME COLUMN actual_nombre_columna TO nuevo_nombre_columna; 
